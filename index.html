@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My project</title>
+  </head>
+  <body  >
+   <video id="bgVideo" autoplay loop muted width="320" height="240" autoplay style="position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: -1;">
+      <source src="src\musicvid.mp4" type="video/mp4"></video>
+    <div id="root"></div>
+    <script>
+      const video = document.getElementById('bgVideo');
+  
+      video.addEventListener('ended', function() {
+        this.currentTime = this.duration - 0.1;
+        this.playbackRate = -1;
+        this.play();
+      }, false);
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+ 
+</html>
